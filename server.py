@@ -1,10 +1,14 @@
 from flask import Flask, render_template
 app = Flask(__name__)
 
+signed_in = False
 @app.route("/")
 def index():
-    signed_in = False
     return render_template('index.html',signed_in=signed_in)
+
+@app.route("/contact")
+def contact():
+    return render_template('contact.html',signed_in=signed_in)
 
 @app.route("/hiuser/<name>")
 def hiuser(name):
