@@ -10,5 +10,10 @@ def index():
 def show():
     return '<h1>Yo</h1>'
 
+@app.route("/user/<username>")
+def shows(username):
+    return f"Hi {username[0:3]}"
+
+
 if __name__ == '__main__':
     app.run()
