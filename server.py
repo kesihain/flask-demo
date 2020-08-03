@@ -5,6 +5,11 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route("/hiuser/<name>")
+def hiuser(name):
+    name = name.upper()
+    return render_template('index.html',name=name)
+
 
 @app.route("/another")
 def show():
